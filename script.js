@@ -8,7 +8,7 @@
 //     }
 // })
 // }
-  
+
 // fetch("https://api.themoviedb.org/3/discover/movie?api_key=6e11ada88ca7892fb3cd274150744bae").then((response) => response.json()).then((data) => {
 //     console.log(data);
 //     for (let i = 0; i < 9; i++) {
@@ -25,25 +25,25 @@
 //     rating.appendChild(ratingContent);
 //     document.body.appendChild(rating);
 //     rating.classList.add('rating')
-    
+
 //     // create average container
 //     let averageContainer = document.createElement('div');
 //     averageContainer.classList.add('average');
 //     averageContainer.appendChild(star);
 //     averageContainer.appendChild(rating);
 //     document.body.appendChild(averageContainer);
-   
+
 //     // image
 //     let image = document.createElement('img');
 //     image.src = "https://image.tmdb.org/t/p/w342" + movieObject.poster_path
 //     document.body.insertBefore(image, averageContainer);
-    
+
 //     // movie name
 //     let name = document.createElement('div')
 //     name.classList.add('name');
 //     name.innerText = movieObject.original_title;
 //     document.body.insertBefore(name, averageContainer.nextSibling);
-    
+
 //     //create movie section
 //     let movie = document.createElement('section');
 //     movie.classList.add('name')
@@ -75,7 +75,7 @@ loadMoreBtn.addEventListener("click", () => {
 });
 
 // function requestForMore(requestNum) { 
-    // only add one more moive when hit load more
+// only add one more moive when hit load more
 //   fetch("https://api.themoviedb.org/3/discover/movie?api_key=adcea8098267daad7efd09aa1db2d419")
 //     .then((response) => response.json())
 //     .then((data) => {
@@ -94,30 +94,22 @@ loadMoreBtn.addEventListener("click", () => {
 //       generateCards(data.results[i]);
 //     }
 //   });
-function requestForMore(requestNum) {
-    fetch(`https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=${requestNum}&api_key=adcea8098267daad7efd09aa1db2d419`)
-      // .then((response) => response.json())
-      // .then((data) => {
-      //   console.log(data);
-      //   const startIndex = requestNum * 9;
-      //   const endIndex = startIndex + 9;
-      //   for (let i = startIndex; i < endIndex; i++) {
-      //     if (i >= data.results.length) {
-      //       break; // Stop if there are no more results
-      //     }
-      //     generateCards(data.results[i]);
-      //   }
-      // });
-      .then((response) => response.json())
-      .then((data) => {
-      console.log(data);
-      for (let i = 0; i < 9; i++) {
-        generateCards(data.results[i]);
-      }
-    });
-  }
-  
-  fetch("https://api.themoviedb.org/3/movie/now_playing?api_key=adcea8098267daad7efd09aa1db2d419")
+function requestForMore(requestNum)
+
+ {
+  fetch(`https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=${requestNum}&api_key=adcea8098267daad7efd09aa1db2d419`)
+    // .then((response) => response.json())
+    // .then((data) => {
+    //   console.log(data);
+    //   const startIndex = requestNum * 9;
+    //   const endIndex = startIndex + 9;
+    //   for (let i = startIndex; i < endIndex; i++) {
+    //     if (i >= data.results.length) {
+    //       break; // Stop if there are no more results
+    //     }
+    //     generateCards(data.results[i]);
+    //   }
+    // });
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
@@ -125,7 +117,17 @@ function requestForMore(requestNum) {
         generateCards(data.results[i]);
       }
     });
-    
+}
+
+fetch("https://api.themoviedb.org/3/movie/now_playing?api_key=adcea8098267daad7efd09aa1db2d419")
+  .then((response) => response.json())
+  .then((data) => {
+    console.log(data);
+    for (let i = 0; i < 9; i++) {
+      generateCards(data.results[i]);
+    }
+  });
+
 
 function generateCards(movieObject) {
   // create star
@@ -148,6 +150,7 @@ function generateCards(movieObject) {
 
   // image
   let image = document.createElement('img');
+  //conditioal logic
   image.src = "https://image.tmdb.org/t/p/w342" + movieObject.poster_path;
 
   // movie name
@@ -176,7 +179,7 @@ function generateCards(movieObject) {
 //       searchMovies(searchTerm);
 //     }
 //     else{
-    
+
 
 //     //seach Url + value+ API Keyi
 //     fetch(`https://api.themoviedb.org/3/search/movie?query=${searchtext}&api_key=adcea8098267daad7efd09aa1db2d419&page=1`).then((response) => response.json()).then((data) => {
@@ -187,32 +190,38 @@ function generateCards(movieObject) {
 //         }
 //         })
 //         pageNum = 1;
-    
+
 // }
 //   });
-function logSearch(inputtext, pageCount){
-    console.log('The form was submitted.');
-    if (inputtext === ''){
-        pageCount = 0; // Reset position of search
-        fetch(`https://api.themoviedb.org/3/discover/movie?&api_key=adcea8098267daad7efd09aa1db2d419&page=1`).then((response) => response.json()).then((data) => {
-        console.log(data);
-        movieContainer.innerHTML = ''; // clearing previous movies
-        for (let i = 0; i<data.results.length; i++){
-        movieContainer.appendChild(generateCards(data.results[i])) ;
-    }
+function logSearch(inputtext, pageCount) {
+  console.log('The form was submitted.');
+  if (inputtext === '') {
+    pageCount = 0; // Reset position of search
+    fetch(`https://api.themoviedb.org/3/discover/movie?&api_key=adcea8098267daad7efd09aa1db2d419&page=1`).then((response) => response.json()).then((data) => {
+      console.log(data);
+      movieContainer.innerHTML = ''; // clearing previous movies
+      for (let i = 0; i < data.results.length; i++) {
+        movieContainer.appendChild(generateCards(data.results[i]));
+      }
     })
     pageSearch = 2;
-    }
-    else{
+  }
+  else {
     fetch(`https://api.themoviedb.org/3/search/movie?query=${inputtext}&api_key=adcea8098267daad7efd09aa1db2d419&page=1`).then((response) => response.json()).then((data) => {
-        console.log(data);
-        movieContainer.innerHTML = ''; // clearing previous movies
-        for (let i = 0; i<data.results.length; i++){
-            movieContainer.appendChild(generateCards(data.results[i])) ;
-        }
-        })
-        pageNum = 1;
-    }
+      console.log(inputtext);
+
+      movieContainer.innerHTML = ''; // clearing previous movies
+      // for (let i = 0; i < data.results.length; i++) {
+      //   generateCards(data.results[i])
+      // }
+
+      data.results.forEach((movie) => {
+        generateCards(movie)
+      })
+
+    })
+    pageNum = 1;
+  }
 }
 //   // Select form element
 const form = document.getElementById('form');
@@ -220,7 +229,22 @@ const form = document.getElementById('form');
 // // adding a submit event listener
 let pageCount = 1;
 form.addEventListener('submit', function (event) {
-    event.preventDefault();
-    //pageCount += 1; // increaser page number in each click
-    logSearch(NameSearch.value,pageCount);
+  event.preventDefault();
+  //pageCount += 1; // increaser page number in each click
+  logSearch(NameSearch.value, pageCount);
+});
+const clearBtn = document.getElementById("clearBtn");
+
+clearBtn.addEventListener("click", function () {
+  NameSearch.value = ""; // Clear the search input
+
+  // Reload the "Now Playing" page
+  fetch("https://api.themoviedb.org/3/movie/now_playing?api_key=adcea8098267daad7efd09aa1db2d419")
+    .then((response) => response.json())
+    .then((data) => {
+      moviesContainer.innerHTML = ""; // Clear existing movie cards
+      for (let i = 0; i < 9; i++) {
+        generateCards(data.results[i]);
+      }
+    });
 });
