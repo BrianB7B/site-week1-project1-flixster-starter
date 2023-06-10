@@ -40,6 +40,8 @@ Deployed Application (optional): [Flixster Deployed Site](ADD_LINK_HERE)
 - [ ] Implement anything else that you can get done to improve the app functionality!
 
 ### Walkthrough Video
+![ezgif-1-17ddd3b6e5](https://github.com/BrianB7B/site-week1-project1-flixster-starter/assets/120551307/91d1d6de-6647-4591-ae8c-b73d177ab4f3)
+
 
 <a href="https://www.loom.com/share/8d985b6653cd4de68fb45762d9b5f709">
   
