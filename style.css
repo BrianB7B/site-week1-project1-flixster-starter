@@ -1,106 +1,62 @@
-/* h1 {
-  text-transform: uppercase;
-    text-align: center;
-    margin: 20px 0;
-    -webkit-text-fill-color: #D4AF37;
-}
-#form {
-  text-align: center;
-  margin-bottom: 40px;
-}
-body {
-  background-color: #010b13;
-}
-.star {
-  margin: 10px;
-}
-.average {
-  font-weight: normal;
-  color: #949373;
-}
-.name {
-  margin : 1px;
-  color: #949373;
-  font-weight: bold;
-  text-align: center;
-}
-img {
-  margin : 70px;
-  width: 225px;
-  height: 200;
-  border: 10px;
-  border-radius: 10%;
-  border-style: solid;
-  /* border-color: #080B29; */
-  /* border: 4px solid #D4AF37;
-}
-.movie {
-  margin: 100px;
-  display:inline-block;
-} */ 
-/* h1 {
-  text-align: center;
-  color: #949373;
-  text-shadow: 50px #DB1BB5;
-}
 
-body {
-  background-color: rgb(101, 24, 21);
-}
-
-.star {
-  margin: 3px;
-}
-
-.average {
-  font-weight: normal;
-  color: #949373;
-}
-
-.name {
-  margin: 1px;
-  color: #949373;
-  font-weight: bold;
-  text-align: center;
-}
-
-img {
-  margin: 70px;
-  width: 200px;
-  height: auto;
-  border: 20px;
-  border-radius: 20%;
-  border-style: solid;
-  border-color: #080B29;
-}
-
-.movie {
-  margin: 100px;
-  display: inline-block;
-}
-
-.load-more-container {
-  text-align: center;
-  margin-top: 20px;
-} */
 h1 {
   text-align: center;
   color: #D4AF37;
   text-shadow: 50px #DB1BB5;
+  font-family: "SF Hollywood Hills Extended", Courier;
+  font-size: 100px;
 }
-
+#form {
+  text-align: center;
+  margin-bottom: 40px;
+  /* {
+    background-color: var(--web-ui_button-background-color,rgb(var(--color-macaw)));
+    border-radius: var(--__internal__border-radius);
+    bottom: 0;
+    box-shadow: 0 var(--__internal__lip-width) 0 var(--web-ui_button-border-color,rgb(var(--color-whale)));
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+} */
+  
+}
 body {
   background-color: rgb(1, 11, 19);
 }
-
-.star {
-  margin: 10px;
+.load-more-container {
+  display: flex;
+  justify-content: center; /* Horizontally center the button */
+  align-items: center; /* Vertically center the button */
+  background-color: #f7bfbe;
+  padding: 15px 32px;
 }
+
+.load-more-container button{
+  /* text-align: center; 
+  align-items: center; */
+  align-items: center;
+  background-color: #f7bfbe;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+   
+}
+
 
 .average {
   font-weight: normal;
   color: #f7bfbe;
   text-align: center;
+  font-family: "SF Hollywood Hills Extended", Courier;
+  font-weight: bold;
 }
 
 .name {
@@ -108,6 +64,7 @@ body {
   color: #f7bfbe;
   font-weight: bold;
   text-align: center;
+  font-family: "SF Hollywood Hills Extended", Courier;
 }
 
 img {
@@ -123,6 +80,7 @@ img {
 .movie {
   margin: 100px;
   display: inline-block;
+  font-family: "SF Hollywood Hills Extended", Courier;
 }
 
 .background-container {
